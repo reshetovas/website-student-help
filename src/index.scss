@@ -1,0 +1,233 @@
+
+body {
+  margin: 0;
+  font-family: 'inter', system-ui;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e7f6ff
+}
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }
+
+
+
+//все элементы с шрифтом inter, автоматический шрифт button, input - Arial
+* {
+  font-family: 'Inter', system-ui;
+}
+
+.wrapper {
+  //Из FIGMA
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  //////////
+  max-width:1080px; // максимальная ширина
+  margin: 50px auto; //по центру
+}
+
+header {
+  // display: flex; //d-flex
+  // justify-content: space-between; //justify-between
+  border-bottom: 1px solid #eaeaea; //нижнее подчеркивание
+  padding: 40px; //p-40
+  img {
+       margin-right: 15px;
+      }
+  h3,
+  p {
+      margin: 0; //Убираем отступы
+    }
+  }
+
+  .content {
+    h1{
+      margin: 0; //Убираем отступы
+    }
+  }
+
+  
+
+  .button {
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer; // принаведенеии курсор превращается в палец
+  }
+
+  .search-block {
+    border: 1px solid #f3f3f3; // рамки:толщина цвет
+    border-radius: 10px; //скругления
+    padding: 0 15px;
+    position: relative;
+
+    .clear {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 18;
+      height: 18;
+      cursor: pointer;
+    }
+
+    input {
+      border: 0; //чтобы картинка лупы была внутри строчки
+      padding: 14 px;
+      font-size: 16px;
+      width: 200px;
+      height: 32px;
+      right: 30px;
+    }
+  }
+
+  .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .drawer {
+    position: absolute;
+    width: 385px;
+    height: 100%;
+    right: 0;
+    background: #FFFFFF;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .items {
+      flex: 1;
+      overflow: auto; //чтобы выбранные товари можно было скролить
+      margin-bottom: 40px;
+    }
+
+    .h2 {
+      margin-bottom: 15px;
+      margin-top: 0;
+      font-size: 24px;
+      
+      button {
+        background: #FFFFFF;
+        border: 1px solid #F2F2F2;
+        box-sizing: border-box;
+        border-radius: 8px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: box-shadow 0.15s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    
+    .cartTotalBlock {
+      ul{
+        display: block;
+        margin-bottom: 20px !important; //интервал между строчками
+          
+        li{
+          display: flex;
+          align-items: flex-end;
+          margin-bottom: 10px;
+          
+          div {
+            flex: 1; //занимает всю ширину доспустимую в этой строчке
+            height: 1px;
+            border-bottom: 1px dashed #dfdfdf;
+            position: relative;
+            top: -4px;
+            margin: 0 7px; //отступ с обеих сторон 7px
+          }
+        }
+      };
+
+      .greenButton {
+        position: relative; //в пределах кнопки
+
+        &:hover {
+          img {
+            transform: translateX(5px);
+          }
+        }
+
+        img {
+          position: absolute;
+          right: 30px;
+          top: 20px;
+          transition: transform 0.15 s ease-in-out;
+        }
+      }
+    }
+      .greenButton {
+        width: 325px;
+        height: 55px;
+        background: #9DD558;
+        border-radius: 18px;
+        border: 0;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+
+        //светлеть при наведении
+        &:hover {
+          background: lighten(#9DD558, 5%);
+        }
+        //темнеть при нажатии
+        &:active {
+          background: darken(#9DD558, 5%);
+        }
+
+      }
+  
+
+    .cartItem{
+      border: 1px solid #f3f3f3;
+      border-radius: 20px; //скругления
+      padding: 0 15px;
+      height: 100px;
+      overflow: hidden; //чтобы картинка не выходила за рамки
+
+      p{
+        font-size: 14px;
+      };
+      b {
+        font-size: 13px;
+      };
+      .removeBtn {
+        background: #FFFFFF;
+        border: 1px solid #F2F2F2;
+        box-sizing: border-box;
+        border-radius: 8px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: box-shadow 0.15s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+
+  }
+
